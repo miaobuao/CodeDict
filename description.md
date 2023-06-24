@@ -1,0 +1,3 @@
+# CodeDict
+
+all for cracker
