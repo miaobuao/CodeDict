@@ -1,0 +1,9 @@
+[submodule "lib/wpa-dictionary"]
+	path = lib/wpa-dictionary
+	url = https://github.com/conwnet/wpa-dictionary.git
+[submodule "lib/RW_Password"]
+	path = lib/RW_Password
+	url = https://github.com/r35tart/RW_Password.git
+[submodule "lib/Blasting-dictionary"]
+	path = lib/Blasting-dictionary
+	url = https://github.com/rootphantomer/Blasting_dictionary.git
