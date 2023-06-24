@@ -4,9 +4,12 @@
 [submodule "lib/RW_Password"]
 	path = lib/RW_Password
 	url = https://github.com/r35tart/RW_Password.git
-[submodule "lib/Blasting-dictionary"]
-	path = lib/Blasting-dictionary
-	url = https://github.com/rootphantomer/Blasting_dictionary.git
 [submodule "lib/PasswordDict"]
 	path = lib/PasswordDict
+	url = https://github.com/k8gege/PasswordDic.git
+[submodule "lib/Blasting_dictionary"]
+	path = lib/Blasting_dictionary
+	url = https://github.com/rootphantomer/Blasting_dictionary.git
+[submodule "lib/PasswordDic"]
+	path = lib/PasswordDic
 	url = https://github.com/k8gege/PasswordDic.git
