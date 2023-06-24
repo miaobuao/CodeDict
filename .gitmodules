@@ -7,3 +7,6 @@
 [submodule "lib/Blasting-dictionary"]
 	path = lib/Blasting-dictionary
 	url = https://github.com/rootphantomer/Blasting_dictionary.git
+[submodule "lib/PasswordDict"]
+	path = lib/PasswordDict
+	url = https://github.com/k8gege/PasswordDic.git

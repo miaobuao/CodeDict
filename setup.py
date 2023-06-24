@@ -40,4 +40,7 @@ setup(
     package_data={
         '': ['*.zip'],
     },
+    install_requires=[
+        'meo>=0.0.8'
+    ]
 )
