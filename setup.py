@@ -25,11 +25,10 @@ setup(
     author       =  info["__author__"],
     url          =  info["__url__"],
     description  =  info["__description__"],
-    version      =  info["__version__"],
+    version      =  ".".join(map(str, info["__version__"])),
     license      =  info["__license__"],
     author_email =  info["__author_email__"],
     packages     = find_packages(),
-    # include_package_data = True,
     long_description     = long_description,
     long_description_content_type="text/markdown",
     classifiers=[
@@ -38,9 +37,9 @@ setup(
         "Operating System :: OS Independent",
     ],
     package_data={
-        '': ['*.zip'],
+        'codedict': ['slices/*'],
     },
     install_requires=[
         'meo>=0.0.8'
-    ]
+    ],
 )
