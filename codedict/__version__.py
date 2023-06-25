@@ -3,7 +3,7 @@ package declaration
 """
 __title__ = 'CodeDict'
 __description__ = 'Code book for cracker'
-__version__ = [0, 0, 4]
+__version__ = [0, 0, 5]
 __url__ = "http://github.com/miaobuao/CodeDict"
 __author__ = 'miaobuao'
 __author_email__ = 'miaobuao@outlook.com'

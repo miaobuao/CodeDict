@@ -34,17 +34,27 @@ class CodeBookPath:
 
 def get_lines(path, encoding='utf8'):
     fopen = open(path, 'r', encoding=encoding)
-    while True:
+    line = fopen.readline()
+    while line:
+        if _line := line.strip():
+            yield _line
         line = fopen.readline()
-        if line := line.strip():
-            yield line
-        else: break
     fopen.close()
 
 class CodeLoader:
-    def __init__(self, *path, unique=True) -> None:
+    def __init__(self, *path, unique=True, use_bytes=False, encoding='utf8') -> None:
         self.path = set(path)
-        self._unique = True
+        self._unique = unique
+        self.use_bytes = use_bytes
+        self.encoding = encoding
+    
+    def bytes(self):
+        self.use_bytes = True
+        return self
+    
+    def str(self):
+        self.use_bytes = False
+        return self
         
     def unique(self):
         self._unique = True
@@ -54,19 +64,22 @@ class CodeLoader:
         self._unique = False
         return self
 
-    def __iter__(self):
-        if len(self.path) == 1:
-            return get_lines(self.path[0])
+    @property
+    def iter(self):
         if self._unique:
-            res = set()
+            res = []
             for path in self.path:
-                lines = set(get_lines(path))
-                res = res or lines
-            return iter(res)
+                res += list(get_lines(path, encoding=self.encoding))
+            return iter(set(res))
         return itertools.chain.from_iterable([
             get_lines(path)
             for path in self.path
         ])
+        
+    def __iter__(self):
+        if self.use_bytes:
+            return map(lambda x: x.encode(self.encoding), self.iter)
+        return self.iter
     
     def __add__(self, v):
         if isinstance(v, CodeLoader):
@@ -97,14 +110,8 @@ class Codes:
 
 if __name__ == '__main__':
     cnt = 0
-    it = Codes.five_million() + Codes.rootphantomer()
-    for cell in it.not_unique():
-        cnt +=1
+    allin = Codes.all_in()
+    for i in allin:
+        # print(i)
+        cnt += 1
     print(cnt)
-    cnt = 0
-    for cell in it.unique():
-        cnt +=1
-    print(cnt)
-    for pwd in Codes.all_in():
-        print(pwd)
-        exit()

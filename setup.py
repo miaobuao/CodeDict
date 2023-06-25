@@ -40,6 +40,6 @@ setup(
         'codedict': ['slices/*'],
     },
     install_requires=[
-        'meo>=0.0.8'
+        'meo>=0.1.3'
     ],
 )
