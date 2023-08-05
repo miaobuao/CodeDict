@@ -112,6 +112,5 @@ if __name__ == '__main__':
     cnt = 0
     allin = Codes.all_in()
     for i in allin:
-        # print(i)
         cnt += 1
     print(cnt)
